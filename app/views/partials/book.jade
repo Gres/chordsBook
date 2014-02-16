@@ -1,0 +1,7 @@
+div(ng-include='\'partials/navbar.html\'')
+.row
+    .col-sm-12
+        h1 Book
+    div(ng-repeat='book in books')
+        h4 {{book.name}}
+        p {{book.info}}
