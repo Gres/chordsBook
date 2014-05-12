@@ -1,0 +1,15 @@
+div(ng-include='\'partials/navbar.html\'')
+.row
+.col-sm-12
+    h1 Create new book
+        .col-sm-12
+    form.form(name='form', ng-submit='bookCreate(form)', novalidate='')
+        .form-group(ng-class='{ \'has-success\': form.name.$valid && submitted, \'has-error\': form.name.$invalid && submitted }')
+            label Name
+            input.form-control(type='text', name='name', ng-model='book.name', required='')
+            p.help-block(ng-show='form.name.$error.required && submitted')
+                | A name is required
+        .form-group(ng-class='{ \'has-success\': form.description.$valid && submitted, \'has-error\': form.email.$invalid && submitted }')
+            label Description
+            input.form-control(type='text', name='description', ng-model='book.description')
+        button.btn.btn-lg.btn-primary(type='submit') Create book

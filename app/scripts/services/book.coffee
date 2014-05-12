@@ -1,11 +1,11 @@
 'use strict'
 
 angular.module('chordsBookApp')
-  .service 'Book', ($resource) ->
-    $resource "/api/book"
-    update:
-      method: "PUT"
-      params: {}
-    get:
-      method: "GET"
-      params: {}
+  .factory 'Book', ($resource) ->
+    $resource "/api/book/:id",
+      id: "@id"
+    ,
+      update:
+        method: "PUT"
+        params: {}
+

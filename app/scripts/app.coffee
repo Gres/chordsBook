@@ -25,9 +25,14 @@ angular.module('chordsBookApp', [
       .when '/book',
         templateUrl: 'partials/book'
         controller: 'BookCtrl'
-      .when '/list-book',
-        templateUrl: 'partials/list-book'
-        controller: 'ListBookCtrl'
+      .when '/book-create',
+        templateUrl: 'partials/book-edit'
+        controller: 'BookCtrl'
+        authenticate: true
+      .when '/book-edit',
+        templateUrl: 'partials/book-edit'
+        controller: 'BookCtrl'
+        authenticate: true
       .otherwise
         redirectTo: '/'
 
